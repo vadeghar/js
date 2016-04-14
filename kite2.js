@@ -10,8 +10,8 @@ console.log("WORKING...")
 
 
 function getLatestNetBuySellQty(){
-	var ORDER_QTY = 10000;
-	var NO_OF_ORDERS = 1;
+	var ORDER_QTY = 600;
+	var NO_OF_ORDERS = 2;
 	$('#instruments').each(function (){
 		$(this).find('li').each(function(){
 			var symbol = $(this).find('.symbol');
