@@ -12,11 +12,11 @@ console.log("WORKING...")
 var BUY_MSG = '';
 var SELL_MSG = '';
 var ITER = 1;
-var ORDER_QTY = 650;
-var NO_OF_ORDERS = 2;
+
 
 function getLatestNetBuySellQty(){
-	
+	var ORDER_QTY = 650;
+	var NO_OF_ORDERS = 2;
 	$('#instruments').each(function (){
 		$(this).find('li').each(function(){
 			var symbol = $(this).find('.symbol');
@@ -31,7 +31,7 @@ function getLatestNetBuySellQty(){
 				var priceAt = $('td:nth-child(1)', this).text();
 				var orderQnty = $('td:nth-child(2)', this).text();
 				var totalOrders = $('td:nth-child(3)', this).text();
-				if(orderQnty > ORDER_QTY && totalOrders == NO_OF_ORDERS){
+				if(orderQnty >= ORDER_QTY && totalOrders == NO_OF_ORDERS){
 					var msg = symName+"\nBUY Price : "+priceAt+"\nQuantity : "+orderQnty+"\nNo. Orders : "+totalOrders;
 					console.log(msg);
 					if(BUY_MSG != msg){
@@ -49,7 +49,7 @@ function getLatestNetBuySellQty(){
 				var SellPriceAt = $('td:nth-child(1)', this).text();
 				var SellOrderQnty = $('td:nth-child(2)', this).text();
 				var SellTotalOrders = $('td:nth-child(3)', this).text();
-				if(SellOrderQnty > ORDER_QTY && SellTotalOrders == NO_OF_ORDERS){
+				if(SellOrderQnty >= ORDER_QTY && SellTotalOrders == NO_OF_ORDERS){
 					var msg2 = symName+"\nSELL Price : "+SellPriceAt+"\nQuantity : "+SellOrderQnty+" \nNo. Orders : "+SellTotalOrders;
 					console.log(msg2);
 					if(SELL_MSG != msg2){ 
