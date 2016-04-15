@@ -12,7 +12,8 @@ console.log("WORKING...")
 var BUY_MSG = '';
 var SELL_MSG = '';
 var ITER = 1;
-
+var ORDER_QTY = 650;
+var NO_OF_ORDERS = 2;
 
 function getLatestNetBuySellQty(){
 	
