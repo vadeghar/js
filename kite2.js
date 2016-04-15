@@ -14,8 +14,8 @@ var SELL_MSG = '';
 var ITER = 1;
 
 function getLatestNetBuySellQty(){
-	var ORDER_QTY = 650;
-	var NO_OF_ORDERS = 2;
+	var ORDER_QTY = 15000;
+	var NO_OF_ORDERS = 1;
 	$('#instruments').each(function (){
 		$(this).find('li').each(function(){
 			var symbol = $(this).find('.symbol');
