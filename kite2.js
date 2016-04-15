@@ -13,9 +13,9 @@ var BUY_MSG = '';
 var SELL_MSG = '';
 var ITER = 1;
 
+
 function getLatestNetBuySellQty(){
-	var ORDER_QTY = 15000;
-	var NO_OF_ORDERS = 1;
+	
 	$('#instruments').each(function (){
 		$(this).find('li').each(function(){
 			var symbol = $(this).find('.symbol');
@@ -33,12 +33,12 @@ function getLatestNetBuySellQty(){
 				if(orderQnty > ORDER_QTY && totalOrders == NO_OF_ORDERS){
 					var msg = symName+"\nBUY Price : "+priceAt+"\nQuantity : "+orderQnty+"\nNo. Orders : "+totalOrders;
 					console.log(msg);
-					//if(BUY_MSG != msg){
+					if(BUY_MSG != msg){
 						BUY_MSG = msg;
 						$( "#popupCntnr" ).append( "<div id='ppDivBuy"+ITER+"' class='btn abcde' style='border-radius:10px; background: white; border: 1px solid #ccc; text-align:left; width:195px; background-color : #fff0e6' onclick='closeThisPP(id)'>"
 													+   msg+"</div>" );
 						giveAlert();
-					//}
+					}
 				}
 			});
 			
@@ -51,12 +51,12 @@ function getLatestNetBuySellQty(){
 				if(SellOrderQnty > ORDER_QTY && SellTotalOrders == NO_OF_ORDERS){
 					var msg2 = symName+"\nSELL Price : "+SellPriceAt+"\nQuantity : "+SellOrderQnty+" \nNo. Orders : "+SellTotalOrders;
 					console.log(msg2);
-					//if(SELL_MSG != msg2){ 
+					if(SELL_MSG != msg2){ 
 						SELL_MSG = msg2;
 						$( "#popupCntnr" ).append( "<div id='ppDivBuy"+ITER+"' class='btn abcde' style='border-radius:10px; background: white; border: 1px solid #ccc; text-align:left; width:195px; background-color : #fff0e6' onclick='closeThisPP(id)'>"
 													+   msg2+"</div>" );
 						giveAlert();
-					//}
+					}
 				}
 			});
 			
